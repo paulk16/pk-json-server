@@ -6,3 +6,5 @@ npm install -g pk-json-server
 
 #execution
 pk-json-server db.json --port=3000
+
+supported verbs: GET, POST, UPDATE, DELETE
