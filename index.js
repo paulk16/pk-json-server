@@ -17,8 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan('dev'))
 app.use(cors())
 
-let db = argv._[0],
-    path = './' + (!db ? 'db.json' : db),
+if(!argv._[0]) throw Error('file.json is required')
+
+let path = './' + argv._[0],
     domain = 'http://localhost',
     routes = [];
 
@@ -41,6 +42,17 @@ fs.readFile(path, 'utf8', (err, data) => {
 
         router.get(route, (req, res) => {
             res.send(json[route])
+        })
+
+        router.get(route + '/:id', (req, res) => {
+            let list = json[route];
+            let id = req.params["id"];
+            let obj = list.find(x => x.id == id);
+            if(obj){
+                res.send(obj);
+            }else{
+                res.status(500).send({ message: 'id not found'});
+            }
         })
 
         router.post(route, (req, res) => {
