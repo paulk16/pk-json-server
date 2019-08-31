@@ -1,8 +1,8 @@
 {
   "name": "pk-json-server",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "bin": "./index.js",
-  "description": "web api restfull in nodejs with files json",
+  "description": "Create a RESTful API in NodeJS from a json file",
   "main": "./index.js",
   "scripts": {
     "start": "node index.js",
@@ -22,9 +22,9 @@
     "json",
     "mocks",
     "server",
-    "restfull",
-    "web-api",
-    "api-rest"
+    "RESTful",
+    "Web API",
+    "API REST"
   ],
   "dependencies": {
     "body-parser": "^1.19.0",

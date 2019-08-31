@@ -126,5 +126,5 @@ app.use((req, res) => {
 })
 
 app.listen(app.get('port'), (req, res) => {
-    console.log(`Server init on port: ${app.get('port')} \n`)
+    console.log(`\nServer init on port: ${app.get('port')}\n`)
 })
